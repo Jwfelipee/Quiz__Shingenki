@@ -1,0 +1,43 @@
+{
+  "bg": "https://www.globalgeek.com.br/wp-content/uploads/2019/05/Image09.jpg",
+  "title": "Quiz CSS da Alura",
+  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "questions": [
+    {
+      "image": "http://www.desktopimages.org/pictures/2015/0714/1/shingeki-no-kyojin-anime-wallpaper-457269.jpg",
+      "title": "Qual o nome da divisão responsavel por enfrentar os Titãs fora da muralha?",
+      "description": "Essa é pra aquecer",
+      "answer": 2,
+      "alternatives": [
+        "Divisão: Ataque aos Titãs",
+        "Divisão: de Guarnição ",
+        "Divisão: de Reconhecimento",
+        "Divisão: da Polícia Militar"
+      ]
+    },
+    {
+      "image": "http://www.desktopimages.org/pictures/2015/0714/1/shingeki-no-kyojin-anime-wallpaper-457269.jpg",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+         "background: linear-gradient(#e66465, #9198e5);",
+         "background: gradient(#e66465, #9198e5);"
+      ]
+    }
+  ],
+  "external": [
+    ""
+  ],
+  "theme": {
+    "colors": {
+      "primary": "#223c61",
+      "secondary": "#56657c",
+      "mainBg": "#171B35",
+      "contrastText": "#FFFFFF",
+      "wrong": "#FF5722",
+      "success": "#4CAF50"
+    },
+    "borderRadius": "4px"
+  }
+}
