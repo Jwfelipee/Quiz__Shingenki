@@ -12,17 +12,21 @@
         "Divisão: Ataque aos Titãs",
         "Divisão: de Guarnição ",
         "Divisão: de Reconhecimento",
-        "Divisão: da Polícia Militar"
+        "Divisão: Levi",
+        "Nenhuma das alternativas"
       ]
     },
     {
       "image": "http://www.desktopimages.org/pictures/2015/0714/1/shingeki-no-kyojin-anime-wallpaper-457269.jpg",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "title": "Qual o nome das três muralhas de Paradis?",
+      "description": "Nem é tão dificil",
+      "answer": 1,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Sino, Jaeger e Levi",
+         "Sina, Maria e Rose",
+         "Sina, Maria e Trost",
+         "Muralha 1, Muralha 2, Muralha 3",
+         "Nenhuma das alternativas"
       ]
     }
   ],
