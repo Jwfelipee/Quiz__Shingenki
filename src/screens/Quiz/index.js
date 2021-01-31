@@ -2,6 +2,7 @@
 import React from 'react';
 //import { Lottie } from '@crello/react-lottie';
 // import db from '../../../db.json';
+import { motion } from 'framer-motion';
 import Widget from '../../components/Widget';
 import QuizLogo from '../../components/QuizLogo';
 import QuizBackground from '../../components/QuizBackground';
@@ -85,7 +86,16 @@ function QuestionWidget({
   const hasAlternativeSelected = selectedAlternative !== undefined;
 
   return (
-    <Widget>
+    <Widget
+    as={motion.section}
+      transition={{ delay: 1, duration: 3 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         <BackLinkArrow href="/" />
         <h3>
@@ -97,18 +107,23 @@ function QuestionWidget({
         alt="Descrição"
         style={{
           width: '100%',
-          height: '150px',
+          height: '200px',
           objectFit: 'cover',
+          opacity: '.8',
         }}
         src={question.image}
       />
-      <Widget.Content>
+      <Widget.Content
+      
+      >
+      <Widget.Pergunta>
         <h2>
           {question.title}
         </h2>
         <p>
           {question.description}
         </p>
+        </Widget.Pergunta>
 
         <AlternativesForm
           onSubmit={(infosDoEvento) => {
@@ -149,11 +164,15 @@ function QuestionWidget({
           {/* <pre>
             {JSON.stringify(question, null, 4)}
           </pre> */}
+          <Widget.Button>
           <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
+          </Widget.Button>
+          <Widget.Description>
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
+          </Widget.Description>
         </AlternativesForm>
       </Widget.Content>
     </Widget>

@@ -39,11 +39,11 @@ Widget.Header = styled.header`
 `;
 
 Widget.Button = styled.div`
-  padding: 1% 24% 7% 5%;
+  padding: 0% 24% 7% 3%;
 `;
 
 Widget.Description = styled.div`
-  padding: 1% 2% 1% 15%;
+  padding: 1% 2% 1% 20%;
 `;
 
 Widget.Links = styled.div`
@@ -51,11 +51,19 @@ Widget.Links = styled.div`
 `;
 
 Widget.Nome = styled.div`
-  padding: 1% 8% 1% 5%;
+  padding: 1% 8% 1% 12%;
+  
+`;
+
+Widget.Pergunta = styled.div`
+  padding: 1% 2% 1% 5%;
+  
 `;
 
 Widget.Content = styled.div`
-
+  border-bottom-right-radius: 180px;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 800px;
   background-color: ${({ theme }) => theme.colors.secondary};
   & > *:first-child {
     margin-top: 0;

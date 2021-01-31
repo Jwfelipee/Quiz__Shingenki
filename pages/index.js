@@ -24,7 +24,7 @@ import Button from '../src/components/Button';
 const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
-  padding-top: 45px;
+  padding-top: 60px;
   margin: auto 10%;
   @media screen and (max-width: 500px) {
     margin: auto;
@@ -55,7 +55,7 @@ export default function Home() {
       </Head>
       <QuizContainer as={motion.div}
           initial={{ scale: 0.1 }}
-          animate={{ rotate: -360, scale: 1 }}
+          animate={{ rotate: -720, scale: 1 }}
           transition={{
             type: "spring",
             stiffness: 20,
@@ -72,8 +72,8 @@ export default function Home() {
             stiffness: 40,
             damping: 40
           }}
-        >
-          <Widget.Header>
+        >    
+          <Widget.Header> 
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
@@ -96,11 +96,11 @@ export default function Home() {
                 value={name}
               />
               </Widget.Nome>
-              
+              <Widget.Button>
               <Button type="submit" disabled={name.length === 0}>
-                {`Jogar ${name}`}
+                {`Jogador: ${name}`}
               </Button>
-              
+              </Widget.Button>
             </form>
             
           </Widget.Content>
