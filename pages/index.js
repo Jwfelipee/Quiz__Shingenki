@@ -96,11 +96,11 @@ export default function Home() {
                 value={name}
               />
               </Widget.Nome>
-              <Widget.Button>
+              
               <Button type="submit" disabled={name.length === 0}>
                 {`Jogar ${name}`}
               </Button>
-              </Widget.Button>
+              
             </form>
             
           </Widget.Content>

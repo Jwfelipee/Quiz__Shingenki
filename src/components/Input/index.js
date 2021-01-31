@@ -10,33 +10,34 @@ const InputBase = styled.input`
   color: ${({ theme }) => theme.colors.contrastText};
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: ${({ theme }) => theme.borderRadius};
-  border-bottom-left-radius: 40px;
-  border-top-left-radius: 120px;
-  border-bottom-right-radius: 160px;
   outline: 0;
   margin-bottom: 25px;
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: ${({ theme }) => theme.colors.contrastText}DD;
+    opacity: 1; /* Firefox */
+  }
 `;
 
 export default function Input({ onChange, placeholder, ...props }) {
-    return (
-        <div>
-            <InputBase 
-            placeholder={placeholder}
-            onChange={onChange}
-            {...props}
-            />
-        </div>
-        
-    );
+  return (
+    <div>
+      <InputBase
+        placeholder={placeholder}
+        onChange={onChange}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      />
+    </div>
+  );
 }
 
 Input.defaultProps = {
-    value: '',
+  value: '',
 };
 
 Input.propTypes = {
-    onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string,
 };
