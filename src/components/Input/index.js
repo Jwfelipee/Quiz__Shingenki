@@ -10,6 +10,9 @@ const InputBase = styled.input`
   color: ${({ theme }) => theme.colors.contrastText};
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: ${({ theme }) => theme.borderRadius};
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 120px;
+  border-bottom-right-radius: 160px;
   outline: 0;
   margin-bottom: 25px;
 `;

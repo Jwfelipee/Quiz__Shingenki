@@ -5,9 +5,12 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.mainBg};
   color: ${({ theme }) => theme.colors.contrastText};
   border-radius: ${({ theme }) => theme.borderRadius};
+  border-bottom-left-radius: 150px;
+  border-top-left-radius: 700px;
+  border-bottom-right-radius: 1000px;
   border: 0;
   width: 100%;
-  padding: 10px 16px;
+  padding: 3% 1% 3% 8%;
   font-weight: bold;
   font-size: 14px;
   line-height: 1;
@@ -24,10 +27,10 @@ const Button = styled.button`
     cursor: not-allowed;
   }
 `;
-/*
+
 Button.propTypes = {
   type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
   children: PropTypes.node.isRequired,
 };
-*/
+
 export default Button;

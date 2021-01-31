@@ -1,12 +1,12 @@
 {
   "bg": "https://www.globalgeek.com.br/wp-content/uploads/2019/05/Image09.jpg",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "title": "Shingeki no Kyojin",
+  "description": "Vamos ver o quanto você conhece de SNK",
   "questions": [
     {
       "image": "http://www.desktopimages.org/pictures/2015/0714/1/shingeki-no-kyojin-anime-wallpaper-457269.jpg",
       "title": "Qual o nome da divisão responsavel por enfrentar os Titãs fora da muralha?",
-      "description": "Essa é pra aquecer",
+      "description": "eae? eu acho que é o Levi... rsrs",
       "answer": 2,
       "alternatives": [
         "Divisão: Ataque aos Titãs",
@@ -19,7 +19,7 @@
     {
       "image": "http://www.desktopimages.org/pictures/2015/0714/1/shingeki-no-kyojin-anime-wallpaper-457269.jpg",
       "title": "Qual o nome das três muralhas de Paradis?",
-      "description": "Nem é tão dificil",
+      "description": "Dica: não esta em ordem",
       "answer": 1,
       "alternatives": [
          "Sino, Jaeger e Levi",
@@ -31,7 +31,9 @@
     }
   ],
   "external": [
-    ""
+    "https://aluraquizpokemon.cesarrobertopg.vercel.app/",
+    "https://alura-quiz-avengers.fernanda-kipper.vercel.app/"
+
   ],
   "theme": {
     "colors": {

@@ -37,91 +37,62 @@ export default function Home() {
   const [name, setName] = React.useState('');
 
   return (
-    <QuizBackground backgroundImage={db.bg}
-    as={motion.div}
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 40,
-            damping: 40
-          }}>
+    <QuizBackground backgroundImage={db.bg}>
       <Head>
         <title>
-          Quiz 
-          {' - '}
+          AluraQuiz -
           {db.title}
         </title>
       </Head>
-      <QuizContainer as={motion.div}
-          initial={{ scale: 0.1 }}
-          animate={{ rotate: -360, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 20,
-            damping: 20
-          }}>
-        <QuizLogo 
-        />
+      <QuizContainer>
+        <QuizLogo />
         <Widget
-          as={motion.div}
-          initial={{ scale: 0 }}
-          animate={{ rotate: 1080, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 40,
-            damping: 40
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
           }}
+          initial="hidden"
+          animate="show"
         >
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            
-            <Widget.Description>
-              <p>{db.description}</p>
-            </Widget.Description>
-            
+            <p>{db.description}</p>
             <form onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
               console.log('Fazendo uma submissão por meio do react');
             }}
             >
-              <Widget.Nome>
               <Input
                 name="nomeDoUsuario"
                 onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
                 placeholder="Diz ai seu nome"
                 value={name}
               />
-              </Widget.Nome>
-              <Widget.Button>
               <Button type="submit" disabled={name.length === 0}>
                 {`Jogar ${name}`}
               </Button>
-              </Widget.Button>
             </form>
-            
           </Widget.Content>
         </Widget>
 
         <Widget
-          as={motion.div}
-            initial={{ scale: 0 }}
-            animate={{ rotate: 1440, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 40,
-              damping: 40
-            }}
-          
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
         >
-           <Widget.Header>
-            <h1>Quizes da Galera</h1>
-            </Widget.Header>
           <Widget.Content>
-           <Widget.Links>
+            <h1>Quizes da Galera</h1>
+
             <ul>
               {db.external.map((linkExterno) => {
                 const [projectName, githubUser] = linkExterno
@@ -142,21 +113,20 @@ export default function Home() {
                 );
               })}
             </ul>
-            </Widget.Links>
           </Widget.Content>
         </Widget>
         <Footer
-          as={motion.div}
-          initial={{ scale: 0 }}
-          animate={{ rotate: 1800, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 40,
-            damping: 40
+          as={motion.footer}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
           }}
-        />        
+          initial="hidden"
+          animate="show"
+        />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/jwfelipee" />
+      <GitHubCorner projectUrl="https://github.com/omariosouto" />
     </QuizBackground>
   );
 }

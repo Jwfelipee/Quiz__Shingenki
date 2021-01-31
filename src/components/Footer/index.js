@@ -1,4 +1,3 @@
-  
 import styled from 'styled-components';
 
 // src/components/Footer/index.js
@@ -7,7 +6,9 @@ const FooterWrapper = styled.footer`
   padding: 20px;
   display: flex;
   align-items: center;
-  border-radius: 4px; 
+  border-bottom-right-radius: 180px;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 165px;
   img {
     width: 58px;
     margin-right: 23px;
