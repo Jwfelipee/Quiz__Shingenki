@@ -156,7 +156,7 @@ export default function Home() {
           }}
         />        
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/jwfelipee" />
+      <GitHubCorner projectUrl="https://github.com/Jwfelipee" />
     </QuizBackground>
   );
 }
