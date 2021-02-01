@@ -46,6 +46,10 @@ Widget.Description = styled.div`
   padding: 1% 2% 1% 20%;
 `;
 
+Widget.Descriptios = styled.div`
+  padding: 1% 1% 10% 15%;
+`;
+
 Widget.Links = styled.div`
   padding: 3% 12% 3% 5%;
 `;
@@ -58,6 +62,10 @@ Widget.Nome = styled.div`
 Widget.Pergunta = styled.div`
   padding: 1% 2% 1% 5%;
   
+`;
+
+Widget.results = styled.div`
+  padding: 2px 2px 2px 2px; 
 `;
 
 Widget.Content = styled.div`

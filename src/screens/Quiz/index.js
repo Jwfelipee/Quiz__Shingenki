@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 //import { Lottie } from '@crello/react-lottie';
-// import db from '../../../db.json';
+//import db from '../../../db.json';
 import { motion } from 'framer-motion';
 import Widget from '../../components/Widget';
 import QuizLogo from '../../components/QuizLogo';
@@ -16,11 +16,13 @@ import BackLinkArrow from '../../components/BackLinkArrow';
 function ResultWidget({ results }) {
   return (
     <Widget>
+  
       <Widget.Header>
         Tela de Resultado:
       </Widget.Header>
 
       <Widget.Content>
+        <Widget.Description>        
         <p>
           Você acertou
           {' '}
@@ -35,29 +37,54 @@ function ResultWidget({ results }) {
           {' '}
           perguntas
         </p>
+        </Widget.Description>
+
         <ul>
+          <Widget.Descriptios>
           {results.map((result, index) => (
-            <li key={`result__${index}`}>
-              #
+            <li key={`result_${result}`}>
+                #
               {index + 1}
               {' '}
-              Resultado:
-              {result === true
-                ? 'Acertou'
-                : 'Errou'}
+               Resultado:{' '}
+              {result === true 
+              ? 'Acertou' 
+              : 'Errou'
+              }
             </li>
           ))}
+          </Widget.Descriptios>
         </ul>
       </Widget.Content>
+     
     </Widget>
   );
 }
 
-function LoadingWidget() {
+{/* function LoadingWidget() {
   return (
-    <Widget>
-      <Widget.Header>
-        Carregando...
+    <Widget loading={db.loading}
+    as={motion.section}
+      transition={{ delay: 1, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, x: '0' },
+        hidden: { opacity: 0, x: '-100%' },
+      }}
+      initial="hidden"
+      animate="show"
+    >
+      <Widget.Header >
+        <img
+        alt="Descrição"
+        style={{
+          padding: '1% 1% 100px 1%',
+          width: '300px',
+          height: '300px',
+          objectFit: 'cover',
+          opacity: '.8',
+        }}
+        src={db.loading}
+        />
       </Widget.Header>
 
       {/*<Widget.Content style={{ display: 'flex', justifyContent: 'center' }}>
@@ -68,9 +95,10 @@ function LoadingWidget() {
           config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
         />
   </Widget.Content>*/}
-    </Widget>
-  );
-}
+    //</Widget>
+ // );
+//}
+//*/}
 
 function QuestionWidget({
   question,
@@ -88,10 +116,10 @@ function QuestionWidget({
   return (
     <Widget
     as={motion.section}
-      transition={{ delay: 1, duration: 3 }}
+      transition={{ delay: 1, duration: 1.5 }}
       variants={{
-        show: { opacity: 1 },
-        hidden: { opacity: 0 },
+        show: { opacity: 1, x: '0' },
+        hidden: { opacity: 0, x: '-100%' },
       }}
       initial="hidden"
       animate="show"
@@ -138,7 +166,7 @@ function QuestionWidget({
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
-            const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeId = `alternative_${alternativeIndex}`;
             const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
             const isSelected = selectedAlternative === alternativeIndex;
             return (
@@ -181,11 +209,11 @@ function QuestionWidget({
 
 const screenStates = {
   QUIZ: 'QUIZ',
-  LOADING: 'LOADING',
+  //LOADING: 'LOADING',
   RESULT: 'RESULT',
 };
 export default function QuizPage({ externalQuestions, externalBg }) {
-  const [screenState, setScreenState] = React.useState(screenStates.LOADING);
+  const [screenState, setScreenState] = React.useState(screenStates.QUIZ);
   const [results, setResults] = React.useState([]);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
@@ -194,7 +222,6 @@ export default function QuizPage({ externalQuestions, externalBg }) {
   const bg = externalBg;
 
   function addResult(result) {
-    results.push(result);
     setResults([
       ...results,
       result,
@@ -224,7 +251,16 @@ export default function QuizPage({ externalQuestions, externalBg }) {
 
   return (
     <QuizBackground backgroundImage={bg}>
-      <QuizContainer>
+      <QuizContainer
+      as={motion.section}
+      transition={{ delay: 1, duration: 1.5 }}
+      variants={{
+        show: { opacity: 1, x: '0' },
+        hidden: { opacity: 0, x: '-100%' },
+      }}
+      initial="hidden"
+      animate="show"
+      >
         <QuizLogo />
         {screenState === screenStates.QUIZ && (
           <QuestionWidget
@@ -236,7 +272,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
           />
         )}
 
-        {screenState === screenStates.LOADING && <LoadingWidget />}
+       {/* {screenState === screenStates.LOADING && <LoadingWidget />} */}
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} />}
       </QuizContainer>

@@ -72,6 +72,7 @@ export default function Home() {
             stiffness: 40,
             damping: 40
           }}
+          
         >    
           <Widget.Header> 
             <h1>{db.title}</h1>
